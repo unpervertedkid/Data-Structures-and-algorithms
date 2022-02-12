@@ -435,6 +435,46 @@ public class SinglyLinkedList {
 		int position = 3;
 		
 		System.out.println("The node at position " + position + " from the end is " + reversedFirst.getnthNodeEnd(position).data);
+		//Create a Singly linked list
+		SinglyLinkedList sorted = new SinglyLinkedList();
+		sorted.insert(4);
+		sorted.insert(4);
+		sorted.insert(4);
+		sorted.insert(3);
+		sorted.insert(2);
+		sorted.insert(1);
+		sorted.insert(1);
+		//Display the list
+		System.out.println("\nWith duplicates: ");
+		sorted.display();
+		
+		//Remove duplicates
+		sorted.removeDuplicate();
+		
+		//Print the List
+		System.out.println("\nWithout duplicates: ");
+		sorted.display();
+		
+		//List before insertion
+		System.out.println("\nBefore insertion: ");
+		sorted.display();
+		//Insert node into sorted list
+		sorted.insertSorted(5);
+		
+		//Print list
+		System.out.println("\nAfter insertion: ");
+		sorted.display();
+		
+		//Print the list
+		System.out.println("\nBefore deletion of key: ");
+		reversedFirst.display();
+		
+		//Delete a key
+		reversedFirst.removekey(20);
+		
+		//Print list after removal of key
+		System.out.println("\nAfter deletion of key: ");
+		reversedFirst.display();
 	}
 
 
