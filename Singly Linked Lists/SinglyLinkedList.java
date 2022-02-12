@@ -274,6 +274,77 @@ public class SinglyLinkedList {
 		
 	}
 	
+// 	//Method to remove duplicate node from sorted list
+	public void removeDuplicate() {
+		//Create a node to hold first node
+		ListNode current = head;
+		
+		/*
+		 * If the current node and the current next node are not null the while
+		 * loop executes
+		 * If the current nodes data and its next nodes data are the same, the current
+		 * pointer is moved to the node after the next node
+		 * Else the current node is moved forward the list by 1
+		 */
+		while((current!=null)&&(current.next!=null)) {
+			if(current.data == current.next.data) {
+				current.next = current.next.next;
+			}
+			else {
+				current = current.next;
+			}
+		}
+		
+		
+	}
+	
+	/*
+	 * Method to insert element to sorted linked list
+	 * It creates a new node(being created)
+	 * It then traverses the list till a node has data that is greater
+	 * It then inserts the node before the node with data greater than the new node
+	 */
+	public void insertSorted(int data) {
+		//Create a new node
+		ListNode newNode = new ListNode(data);
+		//Node to hold current node and node before current
+		ListNode current = head;
+		ListNode temp = null;
+		
+		while((current!=null)&& current.data < newNode.data) {
+			temp = current;
+			current = current.next;
+		}
+		
+		newNode.next = current;
+		temp.next = newNode;
+		
+		
+	}
+	
+	/*
+	 * Method to remove a certain key from list
+	 * Traverses the list and deletes any occurrence of the list
+	 * Takes an integer value
+	 */
+	
+	public void removekey(int key) {
+		//Nodes to hold current and position at -1 from current position
+		ListNode current = head;
+		ListNode temp = null;
+		
+		
+			while ((current != null) && (current.data != key)) {
+				temp = current;
+				current = current.next;
+			}
+			//Return if the list does not contain the key
+			if (current == null)
+				return;
+			//Remove the node containing key as data
+			temp.next = current.next;
+		
+	}
 	//Main class
 	public static void main(String[] args) {
 		
