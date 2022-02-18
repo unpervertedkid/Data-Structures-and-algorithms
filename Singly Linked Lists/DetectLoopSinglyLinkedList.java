@@ -101,6 +101,7 @@ public class DetectLoopSinglyLinkedList {
 		
 		//Display the two lists(Stop the execution as the looped list would run forever
 		singlyLinkedList2.displayList();
+		//Uncomment the next line if you want to see the loop
 		//singlyLinkedList.displayList();
 		
 		//Detect loops
